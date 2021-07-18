@@ -41,7 +41,6 @@ function register(email, name, password) {
             var user = userCredential.user
 
             writeUserData(user.uid, name, user.email)
-            window.location.replace('login.html')
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -58,7 +57,12 @@ function writeUserData(userId, name, email) {
         userId: userId,
         name: name,
         email: email
-    });
+    }, (error) => {
+        if (!error) {
+            window.location.replace('login.html')
+        }
+    }
+    );
 }
 
 function validateEmail(email) {
