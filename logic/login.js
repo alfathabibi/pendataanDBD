@@ -24,7 +24,7 @@ function login(email, password) {
             var errorMessage = error.message;
             document.getElementById("btn_login").disabled = false
             document.getElementById("btn_login").innerHTML = `Login`
-            document.getElementById("btn_login").style.visibility = 'visible'
+            document.getElementById("alertLogin").style.visibility = 'visible'
             document.getElementById("alertLoginText").innerHTML = errorMessage
             return this
 
